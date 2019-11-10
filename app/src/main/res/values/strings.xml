@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Kotlin-Project</string>
-    <string name="hello">Hello Kotlin World!!</string>
+    <string name="title">Hello Kotlin World!!</string>
+    <string name="saveButton">Save</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
 </resources>
