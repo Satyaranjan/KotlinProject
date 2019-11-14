@@ -9,5 +9,7 @@ S
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-m
-=app/src/main/java/com/satyasoft/kotlin_project/SecondClass.kt,c\f\cf2c51e518c0d29b5c5214e17aa9a48cc998f05c
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+p
+@app/src/main/java/com/satyasoft/kotlin_project/SecondActivity.kt,1\f\1f338a409166894af4d41b88c6107238c3149154
