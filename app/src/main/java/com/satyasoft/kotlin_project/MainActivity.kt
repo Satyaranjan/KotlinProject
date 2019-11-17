@@ -1,78 +1,37 @@
 package com.satyasoft.kotlin_project
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.AlarmClock.EXTRA_MESSAGE
-import android.util.Log
-import android.view.MotionEvent
-import android.view.View
-import android.view.inputmethod.InputMethodManager
-import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() ,View.OnTouchListener {
-    private lateinit var name :TextView
-    private lateinit var password : TextView
-    private lateinit var save : Button
-    private lateinit var message:String
+class MainActivity : AppCompatActivity() {
+    private lateinit var imageView : ImageView
+    private lateinit var signIn : TextView
+    private lateinit var signUp : TextView
+    private lateinit var forgotPassword : TextView
+    private lateinit var context : Context
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        name = findViewById(R.id.name)
-        password = findViewById(R.id.password)
-        message = name.text.toString()
-        save = findViewById(R.id.saveButton)
-        save.setOnClickListener { sendMessage()
-            hideKeyboard(name)}
-        name.setOnTouchListener(this)
-      //  name.performClick()
+
+        imageView = findViewById(R.id.imageView)
+        signIn = findViewById(R.id.signIn)
+        signUp = findViewById(R.id.signUp)
+        forgotPassword = findViewById(R.id.forgotPassword)
+
+        imageView.setImageDrawable(resources.getDrawable(R.drawable.movies))
+
+        signIn.setOnClickListener{val intent = Intent(this, SignInActivity::class.java)
+                                                         startActivity(intent)}
+        signUp.setOnClickListener{val intent = Intent(this, SignUpActivity::class.java)
+                                                            startActivity(intent)}
+        forgotPassword.setOnClickListener{val intent = Intent(this, ForgotPasswordActivity::class.java)
+                                                                    startActivity(intent)}
 
     }
-    /** Called when the user taps the Send button  */
-    private fun sendMessage() {
 
-        val intent = Intent(this,SecondActivity::class.java) //not application context
-        intent.putExtra("input",name.text.toString())
-        startActivity(intent)
-    }
-    override fun onTouch(view: View, motionEvent: MotionEvent): Boolean {
-        when (view) {
-            name -> {
-                Log.d("next", "yeyy")
-                when (motionEvent.action){
-                    MotionEvent.ACTION_DOWN -> {
-                       // name.isFocusableInTouchMode
-                        //name.requestFocus()
-                    }
-                    MotionEvent.ACTION_UP -> {
-                        name.performClick()
-                        name.showKeyboard()
-                    }
-                }
-            }
-
-        }
-        return true
-    }
-
-    fun Context.hideKeyboard(view: View) {
-        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
-    }
-
-    fun View.showKeyboard() {
-        this.requestFocus()
-        val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
-    }
-
-    fun View.hideKeyboard() {
-        val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.hideSoftInputFromWindow(windowToken, 0)
-    }
 }

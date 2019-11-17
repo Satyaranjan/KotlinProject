@@ -1,7 +1,26 @@
 <resources>
     <string name="app_name">Kotlin-Project</string>
-    <string name="title">Hello Kotlin World!!</string>
+    <!--SignIN Screen-->
+    <string name="sign_in"><u>Sign In</u></string>
+    <string name="registered_user">Are You Registered User?</string>
     <string name="saveButton">Save</string>
-    <string name="name">Name</string>
-    <string name="password">Password</string>
+    <!--Sign Up Screen-->
+    <string name="sign_up"><u>Sign Up</u></string>
+    <string name="name">Enter Name</string>
+    <string name="password">Enter Password</string>
+    <string name="email">Enter Email</string>
+    <string name="locality">Enter locality</string>
+    <string name="post">Enter Post office name</string>
+    <string name="dist">Enter Dist</string>
+    <string name="ps">Enter PS</string>
+    <string name="state">Enter State</string>
+    <string name="country">Enter Country</string>
+    <string name="pin">Enter Pin</string>
+    <string name="phone">Enter Phone no</string>
+    <string name="new_user">Are You New User?</string>
+    <string name="notice_user">Please Sign up if you are new user.</string>
+    <!--Forgot Password-->
+    <string name="forgot_password"><u>Forgot Password</u></string>
+
+
 </resources>
